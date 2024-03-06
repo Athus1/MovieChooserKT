@@ -34,6 +34,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
             KTprojectTheme {
                 val context = LocalContext.current
                 // A surface container using the 'background' color from the theme
@@ -85,27 +86,43 @@ fun CreateButtons(context: Context,modifier: Modifier = Modifier ) {
         Spacer(modifier = Modifier.height(16.dp)) // Adjust the height value as needed
 
         Button({ DramaAction(context) }) {
-            Text(textAlign = TextAlign.Center,text = "Drama", modifier = Modifier.size(width = 300.dp, height = 48.dp))
+            Text(fontSize = 28.sp,textAlign = TextAlign.Center,text = "Drama", modifier = Modifier.size(width = 300.dp, height = 48.dp))
         }
         Spacer(modifier = Modifier.height(16.dp)) // Adjust the height value as needed
 
         Button({ HorrorAction(context) }) {
-            Text("Horror", textAlign = TextAlign.Center,modifier = Modifier.size(width = 300.dp, height = 48.dp))
+            Text("Horror", fontSize = 28.sp,textAlign = TextAlign.Center,modifier = Modifier.size(width = 300.dp, height = 48.dp))
         }
         Spacer(modifier = Modifier.height(16.dp)) // Adjust the height value as needed
 
         Button({ AdventureAction(context) }) {
-            Text("Adventure", textAlign = TextAlign.Center,modifier = Modifier.size(width = 300.dp, height = 48.dp))
+            Text("Adventure", fontSize = 28.sp,textAlign = TextAlign.Center,modifier = Modifier.size(width = 300.dp, height = 48.dp))
         }
         Spacer(modifier = Modifier.height(16.dp)) // Adjust the height value as needed
 
-        Button({ ScienceFictionAction(context) }) {
-            Text("Science Fiction",textAlign = TextAlign.Center,modifier = Modifier.size(width = 300.dp, height = 48.dp))
+        //Button({ ScienceFictionAction(context) }) {
+        //    Text("Science Fiction",fontSize = 24.sp,textAlign = TextAlign.Center,modifier = Modifier.size(width = 300.dp, height = 48.dp))
+        //}
+        Button(
+            onClick = { ScienceFictionAction(context) },
+            modifier = Modifier
+                .size(width = 300.dp, height = 48.dp)
+        ) {
+            Text(
+                text = "Science Fiction",
+                fontSize = 24.sp,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp)
+                    .align(Alignment.CenterVertically)
+            )
         }
         Spacer(modifier = Modifier.height(16.dp)) // Adjust the height value as needed
 
         Button({ ComedyAction(context) }) {
-            Text("Comedy",textAlign = TextAlign.Center, modifier = Modifier.size(width = 300.dp, height = 48.dp))
+            Text(textAlign = TextAlign.Center,text ="Comedy",fontSize = 28.sp, modifier = Modifier.size(width = 300.dp, height = 48.dp))
         }
     }
 }
+
